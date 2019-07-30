@@ -9,20 +9,6 @@ $(".click").on("click", function() {
     createButtons();
 })
 
-// function pushData(){
-
-//     var inputText = document.getElementById("inputText").value;
-    
-    
-//     animes.push(inputText);
-
-//     console.log(animes);
-//     $("#div1").empty();
-//     createButtons();
-    
-    
-
-// }  
 
 
 
@@ -69,7 +55,8 @@ $("#div1").on("click", ".animeButton", function(){
                 
                 // Storing the result item's rating
                 var rating = results[i].rating;
-
+                
+                
                 // Creating a paragraph tag with the result item's rating
                 var p = $("<p>").text("Rating: " + rating);
 
@@ -77,11 +64,25 @@ $("#div1").on("click", ".animeButton", function(){
                 var image = $("<img>");
 
                 image.attr("data-still", results[i].images.original_still.url);
+                image.attr("data-original", results[i].images.original.url);
 
                 // Giving the image tag an src attribute of a proprty pulled off the
                 // result item
                 image.attr("src", results[i].images.original_still.url);
-
+                image.attr("src", results[i].images.original.url);
+                
+                $(image).on("click", function() {
+                    var state = $(this).attr("data-anime");
+                    if (state === "still") {
+                        $(this).attr("src", $(this).attr("data-original"));
+                        $(this).attr("data-anime", "animate");
+                      } else {
+                        $(this).attr("src", $(this).attr("data-still"));
+                        $(this).attr("data-anime", "still");
+                      }
+                      
+                      
+                })
                 // Appending the paragraph and Image we created to the "#div3" div.
                 $("#div3").append(image);
                 $("#div3").append(p);
