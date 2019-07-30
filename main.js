@@ -1,4 +1,22 @@
 var animes = ["One Piece", "Naruto", "One Punch Man", "My Hero Academia", "Bleach", "Fairy Tail", "Dragon Ball Z", "Food Wars!", "Fullmetal alchemist", "Soul eater", "Gintama", "Pokemon", "Hunter X hunter"];
+
+function pushData(){
+
+    var inputText = document.getElementById("inputText").value;
+    
+    
+    animes.push(inputText);
+
+    console.log(animes);
+    
+    
+    
+
+}  
+
+
+console.log(animes);
+pushData();
 function createButtons(){
     for (var i = 0; i < animes.length; i++) {
         var button = $("<button>");
@@ -8,10 +26,17 @@ function createButtons(){
         $("#div1").append(button);
 
         
+        
     }
+    
 
 }
 createButtons();
+
+
+
+ 
+
 
 $(".animeButton").on("click", function(){
     console.log("a button was click");
