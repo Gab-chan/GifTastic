@@ -16,4 +16,4 @@ https://gab-chan.github.io/GifTastic/
 
 ## Logo
 
-![alt text](https://i.ytimg.com/vi/TwYKwaEjJd4/maxresdefault.jpg)
+![alt text](https://adolfschmuck.com/assets/images/giftastic-card.png)
